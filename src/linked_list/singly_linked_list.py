@@ -81,37 +81,3 @@ class SinglyLinkedList(implements(LinkedList)):
 			current = current.next
 		output_str += str(None)
 		return output_str
-
-
-if __name__ == "__main__":
-	sll = SinglyLinkedList()
-	print(sll, sll.size(), sll.head)
-	sll.append("a")
-	print(sll, sll.size(), sll.head.value)
-	sll.prepend(1)
-	print(sll, sll.size(), sll.head.value)
-	print("Exists 1 " + str(sll.exists(1)))
-	print("Exists 3 " + str(sll.exists(3)))
-	print(sll, sll.size(), sll.head.value)
-	sll.append("a")
-	sll.prepend(4)
-	print(sll, sll.size(), sll.head.value)
-	sll.remove_all("a")
-	print(sll, sll.size(), sll.head.value)
-	sll.remove(4)
-	try:
-		sll.remove(4)
-	except LookupError as le:
-		print(le)
-	sll.remove(1)
-	print(sll, sll.size(), sll.head)
-	try:
-		sll.remove(4)
-	except LookupError as le:
-		print(le)
-	print(sll, sll.size(), sll.head)
-	try:
-		sll.remove_all(4)
-	except LookupError as le:
-		print(le)
-	print(sll, sll.size(), sll.head)
