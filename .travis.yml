@@ -1,1 +1,14 @@
 language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python tests/linked_list/test_singly_linked_list.py
+
+branches:
+  only:
+    - master
