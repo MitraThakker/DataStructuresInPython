@@ -11,7 +11,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - python -m unittest linked_list/test_singly_linked_list.py
+  - python -m unittest
 
 branches:
   only:
