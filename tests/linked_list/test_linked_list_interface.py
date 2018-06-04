@@ -24,7 +24,10 @@ class TestSinglyLinkedList(unittest.TestCase):
 		self.linked_list.remove_all(2)
 
 	def test_element_exists(self):
-		self.linked_list.append(1)
+		self.linked_list.exists(1)
+
+	def test_size(self):
+		self.linked_list.size()
 
 	def test_stringify(self):
 		str(self.linked_list)
