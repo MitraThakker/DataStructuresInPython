@@ -1,4 +1,3 @@
-python-interface
 pytest
 pytest-cov
 python-coveralls

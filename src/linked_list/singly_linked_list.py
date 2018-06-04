@@ -1,4 +1,3 @@
-from interface import implements
 from src.linked_list.linked_list_interface import LinkedList
 
 
@@ -10,7 +9,7 @@ class Node:
 		self.value = value
 
 
-class SinglyLinkedList(implements(LinkedList)):
+class SinglyLinkedList(LinkedList):
 	head = None
 	__size = 0
 
