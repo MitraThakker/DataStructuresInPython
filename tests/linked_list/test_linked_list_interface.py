@@ -2,7 +2,7 @@ import unittest
 from src.linked_list.linked_list_interface import LinkedList
 
 
-class TestSinglyLinkedList(unittest.TestCase):
+class TestLinkedList(unittest.TestCase):
 
     def setUp(self):
         LinkedList.__abstractmethods__ = frozenset()
