@@ -1,6 +1,6 @@
 import unittest
 from src.errors import UnimplementedABCMethod
-from src.linked_list.linked_list_abc import LinkedList
+from src.ds.linked_list import LinkedList
 
 
 class TestLinkedList(unittest.TestCase):

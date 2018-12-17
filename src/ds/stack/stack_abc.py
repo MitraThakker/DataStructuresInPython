@@ -1,8 +1,8 @@
-from src.errors import StackUnderflow
-from src.stack.stack_abc import Stack
+from abc import ABC, abstractmethod
+from src.errors import UnimplementedABCMethod, StackUnderflow
 
 
-class UnboundedStack(Stack):
+class Stack(ABC):
 
     def __init__(self):
         self.__stack = list()
@@ -11,8 +11,9 @@ class UnboundedStack(Stack):
     def stack(self):
         return self.__stack
 
+    @abstractmethod
     def push(self, item):
-        self.stack.append(item)
+        raise UnimplementedABCMethod
 
     def pop(self):
         try:

@@ -1,7 +1,7 @@
 import unittest
 
 from src.errors import StackUnderflow, StackOverflow
-from src.stack.bounded_stack import BoundedStack
+from src.ds.stack import BoundedStack
 
 
 class TestUnboundedStack(unittest.TestCase):

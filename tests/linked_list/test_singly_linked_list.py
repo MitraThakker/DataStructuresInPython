@@ -1,5 +1,5 @@
 import unittest
-from src.linked_list.singly_linked_list import SinglyLinkedList
+from src.ds.linked_list import SinglyLinkedList
 
 
 class TestSinglyLinkedList(unittest.TestCase):
