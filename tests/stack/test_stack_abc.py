@@ -10,7 +10,10 @@ class TestLinkedList(unittest.TestCase):
         self.stack = Stack()
 
     def tearDown(self):
-        self.stack = None
+        del self.stack
+
+    def test_property_stack(self):
+        self.assertIsNotNone(self.stack.stack)
 
     def test_push(self):
         with self.assertRaises(UnimplementedABCMethod):
