@@ -6,11 +6,11 @@ from src.linked_list.linked_list_abc import LinkedList
 class TestLinkedList(unittest.TestCase):
 
     def setUp(self):
-        LinkedList.__abstractmethods__ = frozenset()
+        LinkedList.__abstractmethods__ = None
         self.linked_list = LinkedList()
 
     def tearDown(self):
-        self.linked_list = None
+        del self.linked_list
 
     def test_append(self):
         with self.assertRaises(UnimplementedABCMethod):
@@ -41,5 +41,5 @@ class TestLinkedList(unittest.TestCase):
             str(self.linked_list)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

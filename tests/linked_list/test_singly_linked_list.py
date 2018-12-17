@@ -8,7 +8,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.sll = SinglyLinkedList()
 
     def tearDown(self):
-        self.sll = None
+        del self.sll
 
     def test_append_success(self):
         self.sll.append(1)
@@ -83,10 +83,8 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.sll.append(2)
         self.sll.append(3)
 
-        sll_string = str(self.sll)
-
-        self.assertIsNot(sll_string, str(None))
+        self.assertIsNotNone(str(self.sll))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

@@ -42,9 +42,9 @@ class SinglyLinkedList(LinkedList):
                     self.__size -= 1
                     return
                 current = current.next
-            raise LookupError("Element " + str(item) + " not found.")
+            raise LookupError(f'Element {item} not found.')
         else:
-            raise LookupError("Can not remove from empty list.")
+            raise LookupError('Can not remove from empty list.')
 
     def remove_all(self, item):
         if self.head is not None:
@@ -59,7 +59,7 @@ class SinglyLinkedList(LinkedList):
                     current = current.next
             self.head = self.head.next
         else:
-            raise LookupError("Can not remove from empty list.")
+            raise LookupError('Can not remove from empty list.')
 
     def exists(self, item) -> bool:
         current = self.head
@@ -70,10 +70,10 @@ class SinglyLinkedList(LinkedList):
         return False
 
     def __str__(self):
-        output_str = ""
+        output_str = ''
         current = self.head
         while current is not None:
-            output_str += str(current.value) + "->"
+            output_str += str(current.value) + '->'
             current = current.next
         output_str += str(None)
         return output_str
