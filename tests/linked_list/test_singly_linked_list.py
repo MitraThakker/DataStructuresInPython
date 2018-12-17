@@ -15,21 +15,21 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.sll.append(2)
         self.sll.append(3)
 
-        self.assertEqual(self.sll.size(), 3)
+        self.assertEqual(len(self.sll), 3)
 
     def test_prepend_success(self):
         self.sll.prepend(1)
         self.sll.prepend(2)
         self.sll.prepend(3)
 
-        self.assertEqual(self.sll.size(), 3)
+        self.assertEqual(len(self.sll), 3)
 
     def test_remove_head_success(self):
         self.sll.prepend(1)
         self.sll.remove(1)
 
         self.assertFalse(self.sll.exists(1))
-        self.assertEqual(self.sll.size(), 0)
+        self.assertEqual(len(self.sll), 0)
 
     def test_remove_mid_element_success(self):
         self.sll.append(1)
@@ -39,7 +39,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.sll.remove(3)
 
         self.assertFalse(self.sll.exists(3))
-        self.assertEqual(self.sll.size(), 3)
+        self.assertEqual(len(self.sll), 3)
 
     def test_remove_empty_list_failure(self):
         with self.assertRaises(LookupError):
@@ -58,7 +58,7 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.sll.remove_all(2)
 
         self.assertFalse(self.sll.exists(2))
-        self.assertEqual(self.sll.size(), 1)
+        self.assertEqual(len(self.sll), 1)
 
     def test_remove_all_empty_list_failure(self):
         with self.assertRaises(LookupError):

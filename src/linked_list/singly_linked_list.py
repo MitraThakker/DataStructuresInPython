@@ -1,4 +1,4 @@
-from src.linked_list.linked_list_interface import LinkedList
+from src.linked_list.linked_list_abc import LinkedList
 
 
 class Node:
@@ -12,9 +12,6 @@ class Node:
 class SinglyLinkedList(LinkedList):
     head = None
     __size = 0
-
-    def size(self):
-        return self.__size
 
     def append(self, item):
         if self.head is not None:
@@ -64,7 +61,7 @@ class SinglyLinkedList(LinkedList):
         else:
             raise LookupError("Can not remove from empty list.")
 
-    def exists(self, item):
+    def exists(self, item) -> bool:
         current = self.head
         while current is not None:
             if current.value == item:
@@ -80,3 +77,6 @@ class SinglyLinkedList(LinkedList):
             current = current.next
         output_str += str(None)
         return output_str
+
+    def __len__(self):
+        return self.__size
