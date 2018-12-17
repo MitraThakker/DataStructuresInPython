@@ -6,6 +6,7 @@ from src.linked_list.linked_list_abc import LinkedList
 class TestLinkedList(unittest.TestCase):
 
     def setUp(self):
+        LinkedList.__abstractmethods__ = frozenset()
         self.linked_list = LinkedList()
 
     def tearDown(self):
