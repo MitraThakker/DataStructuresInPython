@@ -62,6 +62,7 @@ class TestLinearQueue(unittest.TestCase):
         self.assertTrue(self.q.is_empty())
 
     def test_stringify(self):
+        self.q.enqueue(1)
         self.assertIsNotNone(str(self.q))
 
     def test_len(self):
