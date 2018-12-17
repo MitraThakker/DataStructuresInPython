@@ -1,5 +1,5 @@
-from src.errors import StackOverflow
 from src.ds.stack import Stack
+from src.errors import StackOverflow
 
 
 class BoundedStack(Stack):

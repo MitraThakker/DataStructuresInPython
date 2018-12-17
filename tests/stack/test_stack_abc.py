@@ -1,5 +1,5 @@
 import unittest
-from src.errors import UnimplementedABCMethod, StackUnderflow
+from src.errors import UnimplementedABCMethod
 from src.ds.stack import Stack
 
 
