@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
-from src.errors import UnimplementedABCMethod, StackUnderflow
+from src.errors import StackOverflow, StackUnderflow
 
 
 class Stack(ABC):
 
-    def __init__(self):
+    def __init__(self, capacity: int = 16):
         self.__stack = list()
+        self.capacity = capacity
 
     @property
     def stack(self):
@@ -13,20 +14,22 @@ class Stack(ABC):
 
     @abstractmethod
     def push(self, item):
-        raise UnimplementedABCMethod
+        if len(self.stack) == self.capacity:
+            raise StackOverflow
+        self.stack.append(item)
 
+    @abstractmethod
     def pop(self):
         try:
             return self.stack.pop()
         except IndexError:
             raise StackUnderflow
 
-    def exists(self, item) -> bool:
-        return item in self.stack
-
+    @abstractmethod
     def top(self) -> int:
         return len(self.stack) - 1
 
+    @abstractmethod
     def __str__(self):
         output_str = '\n'
         stringified_list = list(map(str, self.stack))
@@ -36,3 +39,7 @@ class Stack(ABC):
             output_str += f'| {item_repr} |\n'
         output_str += f' _{"_" * max_width}_\n'
         return output_str
+
+    @abstractmethod
+    def __contains__(self, item):
+        return item in self.stack

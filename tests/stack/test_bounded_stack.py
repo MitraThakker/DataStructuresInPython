@@ -16,8 +16,8 @@ class TestUnboundedStack(unittest.TestCase):
         self.stack.push(1)
         self.stack.push('qwerty')
 
-        self.assertTrue(self.stack.exists(1))
-        self.assertTrue(self.stack.exists('qwerty'))
+        self.assertTrue(1 in self.stack)
+        self.assertTrue('qwerty' in self.stack)
         self.assertEqual(self.stack.top(), 1)
 
     def test_push_overflow(self):
@@ -31,7 +31,7 @@ class TestUnboundedStack(unittest.TestCase):
         self.stack.push(1)
         popped = self.stack.pop()
 
-        self.assertFalse(self.stack.exists(1))
+        self.assertFalse(1 in self.stack)
         self.assertEqual(popped, 1)
         self.assertEqual(self.stack.top(), -1)
 
@@ -39,14 +39,14 @@ class TestUnboundedStack(unittest.TestCase):
         with self.assertRaises(StackUnderflow):
             self.stack.pop()
 
-    def test_element_exists_found(self):
+    def test_contains_true(self):
         self.stack.push(1)
 
-        self.assertTrue(self.stack.exists(1))
+        self.assertTrue(1 in self.stack)
         self.assertEqual(self.stack.top(), 0)
 
-    def test_element_exists_not_found(self):
-        self.assertFalse(self.stack.exists(1))
+    def test_contains_false(self):
+        self.assertFalse(1 in self.stack)
         self.assertEqual(self.stack.top(), -1)
 
     def test_top(self):
