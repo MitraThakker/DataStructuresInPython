@@ -28,9 +28,9 @@ class TestLinkedList(unittest.TestCase):
         with self.assertRaises(UnimplementedABCMethod):
             self.linked_list.remove_all(2)
 
-    def test_element_exists(self):
+    def test_contains(self):
         with self.assertRaises(UnimplementedABCMethod):
-            self.linked_list.exists(1)
+            return 1 in self.linked_list
 
     def test_len(self):
         with self.assertRaises(UnimplementedABCMethod):

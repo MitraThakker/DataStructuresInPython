@@ -61,7 +61,7 @@ class SinglyLinkedList(LinkedList):
         else:
             raise LookupError('Can not remove from empty list.')
 
-    def exists(self, item) -> bool:
+    def __contains__(self, item):
         current = self.head
         while current is not None:
             if current.value == item:

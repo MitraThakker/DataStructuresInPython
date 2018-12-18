@@ -21,7 +21,7 @@ class LinkedList(ABC):
         raise UnimplementedABCMethod
 
     @abstractmethod
-    def exists(self, item) -> bool:
+    def __contains__(self, item):
         raise UnimplementedABCMethod
 
     @abstractmethod
